@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react'
-import Numbers from './components/Numbers';
+import Hours from './components/Hours';
 import Header from './components/Header';
+import Button from './components/Button';
+import Date from './components/Date';
 import './App.css';
 
 
@@ -24,8 +26,9 @@ function App() {
     <div className="App">
       <Header name={name}/>
       <div className='hours-div'>
-        <Numbers/>
-        <Numbers/>
+        <Hours/>
+        <Date/>
+        <Button/>
       </div>
     </div>
   );
