@@ -1,7 +1,7 @@
 const Desc = () => {
     return (
         <div>
-            <input className='desc' type='text' placeholder='description'/>
+            <input className='desc' type='text' placeholder='description' required/>
         </div>
     )
 }

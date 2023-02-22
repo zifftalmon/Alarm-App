@@ -1,7 +1,7 @@
 const Hours = () => {
     return (
         <div>
-            <input className='input' type='time'/>
+            <input className='input' type='time' required/>
         </div>
     )
 }

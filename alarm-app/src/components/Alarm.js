@@ -1,3 +1,5 @@
+import Toggle from "./Toggle"
+
 const Alarm = (props) => {
     return (
         <div className="alarm-div">
@@ -6,6 +8,7 @@ const Alarm = (props) => {
                 <h2>{props.date}</h2>
                 <h2>{props.desc}</h2>
             </div>
+            <Toggle/>
         </div>
     )
 }
