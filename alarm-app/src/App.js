@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import {useEffect, useState} from 'react'
+import Numbers from './components/Numbers';
+import Header from './components/Header';
 import './App.css';
 
+
 function App() {
+  const [name,setName] = useState()
+
+
+  useEffect(() => {
+    const newName = () => {
+      const userName = prompt('please enter your name')
+      if(userName.length === 0 || userName === '') {
+        prompt('please enter your name')
+      }else {
+        setName(userName)
+      }
+    }
+    newName()
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header name={name}/>
+      <div className='hours-div'>
+        <Numbers/>
+        <Numbers/>
+      </div>
     </div>
   );
 }
