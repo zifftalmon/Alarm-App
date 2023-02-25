@@ -1,7 +1,7 @@
 const Date = () => {
     return (
         <div>
-            <input className="input" type='date' required/>
+            <input className="input" type='datetime-local' required/>
         </div>
     )
 }

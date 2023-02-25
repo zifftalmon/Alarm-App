@@ -1,9 +1,9 @@
 const Toggle = () => {
     return (
         <div>
-            <label class="switch">
-                <input type="checkbox"/>
-                <span class="slider round"></span>
+            <label className="switch">
+                <input type="checkbox" checked={true}/>
+                <span className="slider round"></span>
             </label>
         </div>
     )

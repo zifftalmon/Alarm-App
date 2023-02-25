@@ -6,16 +6,16 @@ import Date from './components/Date';
 import Desc from './components/Desc';
 import Alarm from './components/Alarm';
 import './App.css';
+import Timer from './components/Timer';
 
 
 function App() {
   const [name,setName] = useState()
-  const [time,setTime] = useState()
+  // const [time,setTime] = useState()
   const [date,setDate] = useState()
-  const [desc,setDesc] = useState()
+  // const [desc,setDesc] = useState()
   const [alarms,setAlarms] = useState([])
-
-
+  
   // useEffect(() => {
   //   const newName = () => {
   //     const userName = prompt('please enter your name')
@@ -30,18 +30,15 @@ function App() {
 
   const setNewAlarm = (e) => {
     e.preventDefault()
-    setTime(e.target[0].value)
-    setDate(e.target[1].value)
-    setDesc(e.target[2].value)
-    setAlarms(alarms => [...alarms,{time:time,date:date,desc:desc}])
+    setDate(e.target[0].value)
   }
 
   return (
     <div className="App">
+      <Timer date={date}/>
       <Header name={name}/>
       <form onSubmit={setNewAlarm}>
         <div className='hours-div'>
-          <Hours/>
           <Date/>
         </div>
           <Desc/>
@@ -49,7 +46,6 @@ function App() {
       </form>
       {
         alarms.map((item,i) => {
-          console.log(item);
           return(
             <div key={i}>
               <Alarm time={item.time} date={item.date} desc={item.desc}/>
